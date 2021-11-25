@@ -11,6 +11,8 @@
     <properties>
         <!-- Dependencies -->
         <project.bom.version>1.0-SNAPSHOT</project.bom.version>
+        <!-- Now that the Camel BOM is in this POM, we need to provide the version -->
+        <camel.version>3.11.3</camel.version>
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -20,10 +22,29 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Custom BOM -->
             <dependency>
                 <groupId>com.asodc.maven</groupId>
                 <artifactId>project-bom</artifactId>
                 <version>${project.bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Camel BOM -->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-bom</artifactId>
+                <version>${camel.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- camel-blueprint is tracked under a separate BOM -->
+            <dependency>
+                <groupId>org.apache.camel.karaf</groupId>
+                <artifactId>camel-karaf-bom</artifactId>
+                <version>${camel.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -12,22 +12,12 @@
 
     <properties>
         <!-- Dependencies -->
-        <camel.version>3.11.3</camel.version>
         <log4j.version>2.14.1</log4j.version>
     </properties>
 
     <!-- Using the dependencyManagement element allows modules that import the BOM to optionally include the dependencies with the versions defined here -->
     <dependencyManagement>
         <dependencies>
-            <!-- Camel BOM - NOTE: this doesn't propagate to modules that import project-bom, so this PoC is a dead-end -->
-            <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-bom</artifactId>
-                <version>${camel.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
