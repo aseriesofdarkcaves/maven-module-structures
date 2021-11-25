@@ -19,28 +19,28 @@
     <!-- Using the dependencyManagement element allows modules that import the BOM to optionally include the dependencies with the versions defined here -->
     <dependencyManagement>
         <dependencies>
+            <!-- Camel BOM - NOTE: this doesn't propagate to modules that import project-bom, so this PoC is a dead-end -->
             <dependency>
                 <groupId>org.apache.camel</groupId>
-                <artifactId>camel-core</artifactId>
+                <artifactId>camel-bom</artifactId>
                 <version>${camel.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
 
+            <!-- camel-blueprint is tracked under a separate BOM -->
             <dependency>
                 <groupId>org.apache.camel.karaf</groupId>
-                <artifactId>camel-blueprint</artifactId>
+                <artifactId>camel-karaf-bom</artifactId>
                 <version>${camel.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
                 <version>${log4j.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-endpointdsl</artifactId>
-                <version>${camel.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
