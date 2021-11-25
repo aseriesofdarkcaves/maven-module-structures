@@ -15,8 +15,3 @@ Various ideas on how to structure multi-module projects with Maven.
 `Parent Aggregator POM` - an amalgamation of Parent & Aggregator POMs.
 
 `Bill of Materials (BOM) POM` - used to define a project's dependency versions in a centralised manner.
-
-## Using a BOM
-
-- Define a BOM
-- Import the BOM in a standalone via `<dependencies>` element (allowing transitive dependencies)
