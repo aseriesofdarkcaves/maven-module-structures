@@ -20,6 +20,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- This BOM actually references other BOMs, so you get those too -->
             <dependency>
                 <groupId>com.asodc.maven</groupId>
                 <artifactId>project-bom</artifactId>

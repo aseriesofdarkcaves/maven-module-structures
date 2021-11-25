@@ -19,7 +19,7 @@
     <!-- Using the dependencyManagement element allows modules that import the BOM to optionally include the dependencies with the versions defined here -->
     <dependencyManagement>
         <dependencies>
-            <!-- Camel BOM - NOTE: this doesn't propagate to modules that import project-bom, so this PoC is a dead-end -->
+            <!-- Camel BOM -->
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-bom</artifactId>
